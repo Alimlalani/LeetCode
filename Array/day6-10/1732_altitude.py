@@ -3,6 +3,14 @@ class Solution:
         
         return max(accumulate(gain, initial=0))
 
+class Solution:
+def largestAltitude(self, gain: List[int]) -> int:
+
+    arr =[0,gain[0]]
+
+    for i in range(1,len(gain)):
+        arr.append(arr[-1] + gain[i])
+    return max(arr)
 
 
 '''
