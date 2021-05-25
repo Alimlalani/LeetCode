@@ -10,7 +10,17 @@
                 nums[i+1] += diff
                 counter += diff
         return counter
-
+    
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        
+        counter = 0
+        for i in range(1,len(nums)):
+            if nums[i] <= nums[i-1]:
+                diff = nums[i-1] -nums[i] +1
+                nums[i] += diff
+                counter+=diff 
+        return counter 
 
 '''
 You are given an integer array nums (0-indexed). In one operation, you can choose an element of the array and increment it by 1.
